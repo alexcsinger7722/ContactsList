@@ -1,0 +1,71 @@
+Loading contacts.... No contacts found.
+
+Welcome to Contact List!
+
+What would you like to do?
+1) Add new contact
+2) Search by last name
+3) Print Contact List
+4) Save and quit
+
+-> 1
+
+Add new contact.
+
+*required
+
+*Enter First Name: First
+*Enter Last Name: Last
+Enter Address: 123 Address
+Enter Email: email@email.com
+Enter Phone: 5551234
+Enter Notes: note
+
+New Contact Added: First Last
+
+What would you like to do?
+1) Add new contact
+2) Search by last name
+3) Print Contact List
+4) Save and quit
+
+-> 2
+
+Enter last name to search -> Last
+
+Contact Found! First Last
+123 Address
+email@email.com
+5551234
+note
+
+What would you like to do?
+1) Add new contact
+2) Search by last name
+3) Print Contact List
+4) Save and quit
+
+-> 3
+
+Contacts List
+
+1.
+
+First Last
+123 Address
+email@email.com
+5551234
+note
+
+End of contacts
+
+What would you like to do?
+1) Add new contact
+2) Search by last name
+3) Print Contact List
+4) Save and quit
+
+-> 4
+
+Saving...
+Goodbye.
