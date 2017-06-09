@@ -9,7 +9,6 @@ import java.awt.*;
 //one instance of this class represents one the main function of our program which includes test cases
 public class main{
 	
-	public static window win = new window();
 	public static list contactList = new list();
 	
 	public static void main(String[] args) {
