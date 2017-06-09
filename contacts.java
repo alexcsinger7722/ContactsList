@@ -1,6 +1,11 @@
-package contactslist;
+package contacts;
 
-public class contacts {
+
+//one instance of this class represents one contact in list
+import java.io.*;
+import java.util.*;
+
+public class contacts{
 
 	private String firstName = "A";
 	private String lastName;
@@ -23,7 +28,7 @@ public class contacts {
 	}
 	public String printList(){
 	
-		return "Contact no: " + id + "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nAddress: " + address + "\nEmail: " + email + "\nPhone: " + phone + "\nNotes: " + notes + "\n\n";
+		return "Contact number " + (id+1) + "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nAddress: " + address + "\nEmail: " + email + "\nPhone: " + phone + "\nNotes: " + notes + "\n\n";
 		
 	}
 	
