@@ -1,72 +1,34 @@
-package contactslist;
+package contacts;
 
 import java.io.*;
 
+
 import java.util.ArrayList;
+import java.awt.*;
 
-public class main {
-
-	public static ArrayList<contacts> list;
-
+//one instance of this class represents one the main function of our program which includes test cases
+public class main{
+	
+	public static window win = new window();
+	public static list contactList = new list();
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		
-		//System.out.print(list.printList());
-		
-		list = new ArrayList<contacts>();
-
 		loadFromDisk();
 		
-		//addContact("Stephen", "Knotts", "2279 St Francis Drive, Palo Alto, CA", "Stephkno@gmail.com", "6503873030", "me", list.size());
-		//addContact("Jack", "Gaul", "232 Dwight Road, Burlingame, CA", "jack.tone.gaul@gmail.com", "6507737159", "jack", list.size());
-		//addContact("Alex", "Singer", "211 Dayview Drive", "alexandersinger@outlook.com", "6505551234", "alex", list.size());
+//		contactList.addContact("Stephen", "Knotts", "2279 St Francis Drive, Palo Alto, CA", "Stephkno@gmail.com", "6503873030", "me");
+//		contactList.addContact("Jack", "Gaul", "232 Dwight Road, Burlingame, CA", "jack.tone.gaul@gmail.com", "6507737159", "jack");
+//		contactList.addContact("Alex", "Singer", "211 Dayview Drive", "alexandersinger@outlook.com", "6505551234", "alex");
 
-		printList();
+		//printList();
 		
-		getContactByLastName("Knotts");
+		//list.findByLastName("Knotts");
 
 		//saveAndQuit();
-	}
-	
-	public static void addContact(String fname, String lname, String addr, String email, String phone, String note, int idNo){
-		
-		contacts newcontact = new contacts(fname, lname, addr, email, phone, note, idNo);
-		list.add(newcontact);
-				
-	}
-	
-	public static void getContactByLastName(String lname){
-		
-		contacts foundContact = null;
-		String test1 = "False";
-		//System.out.println(list);
-		
-		for(contacts c : list){
-			//System.out.println(c.isLastName(lname));
-			if(c.isLastName(lname)){
-				
-				print(c.printList());
-				
-				foundContact = c;
-				test1 = "True";
-				
-			}
-			
-		}
-		
-		if(test1 == "True"){
-			
-			System.out.print("Found contact with last name " + lname + ": ");
-			System.out.print("\n\n" + foundContact.printList());
-		
-		}
-		else{
-		
-			System.out.print("\nContact " + lname + " not found.");
-		
-		}
-		
+	//	contactList = null;
+		//loadFromDisk();
+		contactList.returnList();
 	}
 	
 	public static void saveAndQuit(){
@@ -74,34 +36,43 @@ public class main {
 	    ObjectOutputStream outObject;
 
 		try  {
-	         outFile = new FileOutputStream ("/Users/stephen/list");      
+			
+	         outFile = new FileOutputStream ("list");
 	         outObject = new ObjectOutputStream(outFile);
+	         
+	         System.out.print(contactList.returnList());
 
-	 		outObject.writeObject(list);
-
+	         outObject.writeObject(contactList);
 	 		 outFile.close();
 	         outObject.close();      
 	         
-	         print("Done");
+	         System.out.print("Done");
 	         
 	      } catch (IOException ioe)  {
-	         System.out.println ("Error writing objects to the file: "+ ioe.toString());
+	      
+	    	  System.out.println ("Error writing objects to the file: "+ ioe.toString());
+	      
 	      }
 		
 	}
 	
+	/**
+	 * 
+	 */
 	public static void loadFromDisk(){
 	
 		FileInputStream inFile;
 	    ObjectInputStream inObject;
 
 	      try  {
-	         inFile = new FileInputStream("/Users/stephen/list");      
+	         inFile = new FileInputStream("list");      
 	         inObject = new ObjectInputStream(inFile);
 	         
-	         list = (ArrayList<contacts>)inObject.readObject();
+	         contactList = (list)inObject.readObject();
 	         
-	          inFile.close();
+	         System.out.print(contactList);
+	         
+	         inFile.close();
 	         inObject.close();
 	         
 	      } catch(IOException ioe)  {
@@ -114,7 +85,7 @@ public class main {
 	
 	public static void printList(){
 		
-		for(contacts c : list){
+		for(contacts c : contactList.returnList()){
 		
 			System.out.print(c.printList());
 				
@@ -125,6 +96,7 @@ public class main {
 	}
 	
 }
+	
 /*
 Contact no: 0
 First Name: Stephen
