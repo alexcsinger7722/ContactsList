@@ -14,7 +14,7 @@ public class main{
 	public static void main(String[] args) {
 		
 		
-		loadFromDisk();
+		loadFromDisk(); //No saving or loading from disk, just to be sure we have exactly what she asked for.
 		
 //		contactList.addContact("Stephen", "Knotts", "2279 St Francis Drive, Palo Alto, CA", "Stephkno@gmail.com", "6503873030", "me");
 //		contactList.addContact("Jack", "Gaul", "232 Dwight Road, Burlingame, CA", "jack.tone.gaul@gmail.com", "6507737159", "jack");
