@@ -26,12 +26,12 @@ public class contacts{
 		id = idNo;
 	
 	}
-	public String printList(){
+	public String printList(){       //need comments for every method
 	
 		return "Contact number " + (id+1) + "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nAddress: " + address + "\nEmail: " + email + "\nPhone: " + phone + "\nNotes: " + notes + "\n\n";
 		
 	}
-	
+	//How will we enter a new contact? Is there a method?
 	public boolean isLastName(String name){
 	
 		if(name == lastName){
